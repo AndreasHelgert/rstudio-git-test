@@ -15,4 +15,11 @@ Cdata <- Cdata[order(Cdata[,2]),]
 Odata <- cbind(data[,2],pixel[,2])
 Odata <- Odata[order(Odata[,2]),]
 
-
+x11()
+par(mfrow=c(1,2))
+plot(Cdata, 
+     main = "Carbon Isotopes", xlab = "d13C", yaxt= 'n', ylab = "")
+abline(v=c(-42.5+(1:20)*2.5), lty=3, col= "lightgrey")
+plot(Odata, 
+     main = "Oxygen Isotopes", xlab = "d18O", yaxt= 'n', ylab = "")
+abline(v=c(-8+(0:15)*0.5), lty=3, col= "lightgrey")
